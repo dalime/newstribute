@@ -7,8 +7,9 @@ import IdStore from './IdStore';
 let _messages = {};
 let _chatrooms = [];
 let _newChatroom = {};
-let _chatroomId = IdStore.getId();
 let thisChatroom;
+let _chatRoom = {};
+let _newKey;
 
 class MessageStore extends EventEmitter {
   constructor() {
@@ -58,16 +59,31 @@ class MessageStore extends EventEmitter {
             _chatrooms = arrObjects;
             if (!existingObj[0]) {
               let _chatroom = chatroomRef.push('');
-              _chatroomId = _chatroom.key;
-              let newRoom = {key: _chatroomId, name: action.roomName};
+              let newKey = _chatroom.key;
+              let newRoom = {key: newKey, name: action.roomName, link: action.roomLink, summary: action.roomSummary};
               existingRoomsRef.push(newRoom);
-              this.emit('CHANGE');
+              _newKey = newKey;
+              _chatRoom = newRoom;
             }
           })
           break;
         case 'CREATE_CHATROOM_DETAILS':
           _newChatroom = action.obj;
           this.emit('CHANGE');
+          break;
+        case 'GET_CHATROOM':
+          existingRoomsRef.on('value', snap => {
+            var randomObj = snap.val();
+            var arrObjects = [];
+            for(let key in randomObj) {
+              arrObjects.push(randomObj[key]);
+            }
+            _chatrooms = arrObjects;
+            _chatRoom = _chatrooms.filter(room => {
+              return (room.key === action.id);
+            })[0];
+            this.emit('CHANGE');
+          })
           break;
       }
     })
@@ -86,16 +102,20 @@ class MessageStore extends EventEmitter {
     return _messages;
   }
 
-  getKey() {
-    return _chatroomId;
-  }
-
   getNewChatroom() {
     return _newChatroom;
   }
 
   getChatrooms() {
     return _chatrooms;
+  }
+
+  getChatroom() {
+    return _chatRoom;
+  }
+
+  getNewKey() {
+    return _newKey;
   }
 
 }

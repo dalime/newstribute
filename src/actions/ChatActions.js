@@ -8,10 +8,10 @@ const ChatActions = {
     })
   },
 
-  createChatroom(roomName) {
+  createChatroom(roomName, roomLink, roomSummary) {
     AppDispatcher.dispatch({
       type: 'CREATE_ROOM',
-      roomName
+      roomName, roomLink, roomSummary
     })
   },
 
@@ -39,6 +39,13 @@ const ChatActions = {
   getChatrooms() {
     AppDispatcher.dispatch({
       type: 'GET_ROOMS'
+    })
+  },
+
+  getChatroom(id) {
+    AppDispatcher.dispatch({
+      type: 'GET_CHATROOM',
+      id
     })
   }
 

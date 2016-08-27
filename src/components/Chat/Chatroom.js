@@ -12,7 +12,8 @@ export default class Chatroom extends Component {
     super();
 
     this.state = {
-      chatroomObj: MessageStore.getNewChatroom(),
+      chatroomObj: MessageStore.getChatroom(),
+      //chatroomObj: MessageStore.getNewChatroom(),
       messages: MessageStore.get()
     }
 
@@ -21,6 +22,7 @@ export default class Chatroom extends Component {
 
   componentDidMount() {
     ChatActions.setId(this.props.params.id);
+    ChatActions.getChatroom(this.props.params.id);
     ChatActions.getMessages(this.props.params.id);
     MessageStore.startListening(this._onChange);
   }
@@ -31,18 +33,17 @@ export default class Chatroom extends Component {
 
   _onChange() {
     this.setState({
-      chatroomObj: MessageStore.getNewChatroom(),
+      chatroomObj: MessageStore.getChatroom(),
       messages: MessageStore.get()
     })
   }
 
   render() {
     if (this.state.chatroomObj) {
-      let { title, link, summary } = this.state.chatroomObj;
-
+      let { name, link, summary } = this.state.chatroomObj;
       return (
         <div>
-        <h1>{title}</h1>
+        <h1>{name}</h1>
         <h2>{link}</h2>
         <h3>{summary}</h3>
         <ChatForm chatroomId={this.props.params.id}/>
@@ -50,7 +51,9 @@ export default class Chatroom extends Component {
         </div>
       )
     } else {
-      <Loading show={true} color="blue" />
+      return (
+        <h1>Loading...</h1>
+      )
     }
   }
 
