@@ -8,8 +8,6 @@ const cookieParser = require('cookie-parser');
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-const webpack = require('webpack');
-const webpackConfig = require('../webpack.config');
 
 // DB CONNECT
 require('mongoose').connect(MONGO_URI, err => {
@@ -20,15 +18,22 @@ require('mongoose').connect(MONGO_URI, err => {
 // APP DECLARATION
 const app = express();
 
-// WEBPACK CONFIG
-const compiler = webpack(webpackConfig);
+if (process.env.NODE_NEV === 'production') {
+  app.use(express.static(path.join(__dirname, '../build')));
+} else {
+  const webpack = require('webpack');
+  const webpackConfig = require('../webpack.dev');
 
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: webpackConfig.output.publicPath
-}));
+  // WEBPACK CONFIG
+  const compiler = webpack(webpackConfig);
 
-app.use(require('webpack-hot-middleware')(compiler));
+  app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: webpackConfig.output.publicPath
+  }));
+
+  app.use(require('webpack-hot-middleware')(compiler));
+}
 
 // GENERAL MIDDLEWARE
 app.use(morgan('dev'));

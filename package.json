@@ -5,17 +5,27 @@
   "main": "server/app.js",
   "scripts": {
     "start": "node server/app.js",
+    "postinstall": "webpack",
+    "build": "NODE_ENV='production' webpack",
+    "prod": "NODE_ENV='production' npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "6.3.1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.13.1",
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
+    "cheerio": "^0.22.0",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
+    "firebase": "^3.3.0",
+    "flux": "^2.1.1",
     "font-awesome": "^4.6.3",
     "jquery": "^3.1.0",
     "mongoose": "^4.5.9",
@@ -23,9 +33,7 @@
     "react": "^15.3.0",
     "react-bootstrap": "^0.30.2",
     "react-dom": "^15.3.0",
-    "react-router": "^2.6.1"
-  },
-  "devDependencies": {
+    "react-router": "^2.6.1",
     "babel-cli": "^6.11.4",
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
