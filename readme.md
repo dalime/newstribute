@@ -1,4 +1,4 @@
-# MERN Stack Template
+# NewsRant
 
 Includes:
 
