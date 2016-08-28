@@ -1,3 +1,37 @@
 iframe {
   height: 100vh;
 }
+
+li {
+  list-style: none;
+}
+
+ul {
+  margin-left: -50px;
+}
+
+.bubble:nth-child(odd) {
+    background-color: #f8f8f8;
+    border: 1px solid #c8c8c8;
+    border-radius: 20px;
+    text-align: left;
+    padding: 10px;
+    margin: 10px;
+    word-wrap: break-word;
+}
+
+.bubble:nth-child(even) {
+    background-color: white;
+    border: 1px solid #c8c8c8;
+    border-radius: 20px;
+    text-align: right;
+    padding: 10px;
+    margin: 10px;
+    word-wrap: break-word;
+}
+
+.block {
+  display: block;
+  margin-top: 40px;
+  padding-left: 0px;
+}

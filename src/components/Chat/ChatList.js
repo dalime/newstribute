@@ -8,7 +8,7 @@ export default class ChatList extends Component {
 
     for (let key in messages) {
       let Message = (
-        <li className="list-group-item" key={key}>{messages[key]}</li>
+        <li key={key} className="bubble">{messages[key]}</li>
       )
       Messages.push(Message);
     }
@@ -16,7 +16,7 @@ export default class ChatList extends Component {
     Messages.reverse();
 
     return (
-      <ul className="list-group">
+      <ul>
         {Messages}
       </ul>
     )
