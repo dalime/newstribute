@@ -34,7 +34,7 @@ export default class ChatForm extends Component {
       <div className="form-group">
         <form onSubmit={this._onSubmit} className="form-inline">
           <input type="text" value={messageText} onChange={this._onInputChange} required className="form-control"/>
-          <button className="btn btn-success btn-sm">Send</button>
+          <button className="btn btn-primary btn-md">Send</button>
         </form>
       </div>
     )

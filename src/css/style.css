@@ -6,32 +6,88 @@ li {
   list-style: none;
 }
 
-ul {
+.chatList {
   margin-left: -50px;
 }
 
 .bubble:nth-child(odd) {
-    background-color: #f8f8f8;
-    border: 1px solid #c8c8c8;
+    background-color: rgba(0, 188, 140, 0.57);
+    border: 0px solid #c8c8c8;
     border-radius: 20px;
     text-align: left;
     padding: 10px;
     margin: 10px;
     word-wrap: break-word;
+    color: white;
 }
 
 .bubble:nth-child(even) {
-    background-color: white;
-    border: 1px solid #c8c8c8;
+    background-color: rgba(103, 103, 103, 0.69);
+    border: 0px solid #c8c8c8;
     border-radius: 20px;
     text-align: right;
     padding: 10px;
     margin: 10px;
     word-wrap: break-word;
+    color: white;
 }
 
 .block {
   display: block;
   margin-top: 40px;
   padding-left: 0px;
+}
+
+.articleTitle:hover {
+  cursor: pointer;
+}
+
+.navbar, .navbar-default {
+  background-color: #375a7f;
+  color: white !important;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+body {
+  color: white;
+  background-color: #222222;
+}
+
+.nav li a {
+  color: white;
+}
+
+a {
+  color: #0CDD8D
+}
+
+a:hover {
+  color: #188848;
+  text-decoration: none;
+}
+
+a:active {
+  color: #188848;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #188848;
+  text-decoration: none;
+}
+
+.list-group-item {
+  background-color: rgba(103, 103, 103, 0.69);
+  color: white;
+}
+
+a.list-group-item, button.list-group-item {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
 }

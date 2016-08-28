@@ -16,7 +16,7 @@ export default class ChatList extends Component {
     Messages.reverse();
 
     return (
-      <ul>
+      <ul className="chatList">
         {Messages}
       </ul>
     )

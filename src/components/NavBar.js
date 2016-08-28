@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 export default class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-default navbar-static-top">
+      <nav className="navbar navbar-inverse navbar-static-top">
         <div className="container-fluid">
           <div className="navbar-header">
             <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">

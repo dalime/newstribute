@@ -54,6 +54,7 @@ export default class Chatroom extends Component {
               <h2>{name}</h2>
               <h4>{summary}</h4>
               <a href={link} target="_blank">{link}</a>
+              <hr/>
               <ChatForm chatroomId={this.props.params.id}/>
               <ChatList messages={this.state.messages}/>
             </div>

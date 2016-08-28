@@ -38,14 +38,17 @@ export default class SearchPage extends Component {
     return (
       <div>
         <NavBar/>
-        <div className="jumbotron text-center form-group">
-          <form onSubmit={this._search} className="form-inline">
-            <input type="text" onChange={this._onInputChange} className="form-control"/>
-            <button type="submit" className="btn btn-primary">Search</button>
-          </form>
-        </div>
         <div className="container">
-          <Results />
+          <div className="text-center form-group">
+            <h1>NewsRant</h1>
+            <form onSubmit={this._search} className="form-inline">
+              <input type="text" onChange={this._onInputChange} className="form-control"/>
+              <button type="submit" className="btn btn-primary">Search</button>
+            </form>
+          </div>
+          <div>
+            <Results />
+          </div>
         </div>
       </div>
     )
