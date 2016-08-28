@@ -6,8 +6,37 @@ li {
   list-style: none;
 }
 
+.searchbtn{
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid white;
+  padding:7px;
+  border-radius: 5px;
+}
+
+.searchbtn:hover{
+  color:white !important;
+  padding:8px;
+  border-radius: 5px;
+}
+
 .chatList {
   margin-left: -50px;
+}
+
+ .searchInput{
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  border: 0px solid White;
+}
+.searchInput:focus{
+  outline-style: none;
+}
+.searchDiv{
+  padding: 5px;
+  display:inline-block;
+  border-bottom: 2px solid white;
 }
 
 .bubble:nth-child(odd) {
@@ -16,6 +45,7 @@ li {
     border-radius: 20px;
     text-align: left;
     padding: 10px;
+    padding-left: 25px;
     margin: 10px;
     word-wrap: break-word;
     color: white;
@@ -27,11 +57,14 @@ li {
     border-radius: 20px;
     text-align: right;
     padding: 10px;
+    padding-right: 25px;
     margin: 10px;
     word-wrap: break-word;
     color: white;
 }
-
+iframe{
+  border:0px solid white;
+}
 .block {
   display: block;
   margin-top: 40px;
