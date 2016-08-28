@@ -62,7 +62,7 @@ export default class Chatroom extends Component {
       )
     } else {
       return (
-        <h1>Loading...</h1>
+        <Loading show={true} color="lightgreen" />
       )
     }
   }
