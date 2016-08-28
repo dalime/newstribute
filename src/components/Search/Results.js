@@ -7,7 +7,6 @@ import 'react-loading-bar/dist/index.css';
 
 import ChatActions from '../../actions/ChatActions';
 import MessageStore from '../../stores/MessageStore';
-import IdStore from '../../stores/IdStore';
 
 export default class Results extends Component {
   constructor() {

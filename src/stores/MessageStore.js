@@ -2,8 +2,6 @@ import { EventEmitter } from 'events';
 import firebase from 'firebase';
 import AppDispatcher from '../AppDispatcher';
 
-import IdStore from './IdStore';
-
 let _messages = {};
 let _chatrooms = [];
 let _newChatroom = {};

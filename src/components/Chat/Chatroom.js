@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MessageStore from '../../stores/MessageStore';
-import IdStore from '../../stores/IdStore';
 import Loading from 'react-loading-bar';
 import 'react-loading-bar/dist/index.css';
 import ChatForm from './ChatForm';

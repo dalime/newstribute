@@ -19,4 +19,6 @@ npm start (or nodemon)
 
 #### Note:
 
-Be sure to change the database name in server/app.js to something you like.
+Do you have a topic or news article you want to talk about? This app can bring people together to talk candidly about news that interests them.
+
+Created by Danny Lim and Dhilipanraja Joseph during the Coding House javascript development bootcamp.
