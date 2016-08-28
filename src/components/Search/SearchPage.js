@@ -4,6 +4,8 @@ import { browserHistory } from 'react-router';
 
 import Results from './Results';
 
+import NavBar from '../NavBar';
+
 export default class SearchPage extends Component {
   constructor() {
     super();
@@ -34,13 +36,17 @@ export default class SearchPage extends Component {
 
   render() {
     return (
-      <div className="container">
-        <form onSubmit={this._search}>
-          <input type="text" onChange={this._onInputChange}/>
-          <button type="submit">Search</button>
-        </form>
-        <Results />
-        <button onClick={this._navRooms}>Existing Rooms</button>
+      <div>
+        <NavBar/>
+        <div className="jumbotron text-center form-group">
+          <form onSubmit={this._search} className="form-inline">
+            <input type="text" onChange={this._onInputChange} className="form-control"/>
+            <button type="submit" className="btn btn-primary">Search</button>
+          </form>
+        </div>
+        <div className="container">
+          <Results />
+        </div>
       </div>
     )
   }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MessageStore from '../../stores/MessageStore';
+import NavBar from '../NavBar';
 import ChatActions from '../../actions/ChatActions';
 import { Link } from 'react-router';
 
@@ -36,13 +37,21 @@ export default class ExistingRooms extends Component {
         let path = '/chat/' + room.key
 
         return (
-          <Link key={index} to={path}><p>{room.name}</p></Link>
+          <Link key={index} to={path} className="list-group-item">{room.name}</Link>
         )
       })
+
+      Rooms.reverse();
+
       return (
-        <div className="container">
-          <h1>Rooms</h1>
-          {Rooms}
+        <div>
+          <NavBar/>
+          <div className="container">
+            <h1>Active Chatrooms</h1>
+            <ul className="list-group">
+              {Rooms}
+            </ul>
+          </div>
         </div>
       )
     } else {

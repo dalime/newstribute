@@ -31,10 +31,12 @@ export default class ChatForm extends Component {
     let { messageText } = this.state;
 
     return (
-      <form onSubmit={this._onSubmit}>
-        <input type="text" value={messageText} onChange={this._onInputChange} required/>
-        <button>Send</button>
-      </form>
+      <div className="form-group">
+        <form onSubmit={this._onSubmit} className="form-inline">
+          <input type="text" value={messageText} onChange={this._onInputChange} required className="form-control"/>
+          <button className="btn btn-success btn-sm">Send</button>
+        </form>
+      </div>
     )
   }
 }

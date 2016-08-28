@@ -78,9 +78,10 @@ export default class Results extends Component {
       const Results = this.state.results.map((result, index) => {
         return (
           <div key={index}>
-            <h2 onClick={this._checkIfExists.bind(null, result.title, result.link, result.summary)}>{result.title}</h2>
-            <a href={result.link}>{result.link}</a>
+            <h4 onClick={this._checkIfExists.bind(null, result.title, result.link, result.summary)}>{result.title}</h4>
+            <a href={result.link} target="_blank">{result.link}</a>
             <p>{result.summary}</p>
+            <hr/>
           </div>
         )
       })

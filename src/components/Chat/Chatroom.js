@@ -42,12 +42,17 @@ export default class Chatroom extends Component {
     if (this.state.chatroomObj) {
       let { name, link, summary } = this.state.chatroomObj;
       return (
-        <div>
-        <h1>{name}</h1>
-        <h2>{link}</h2>
-        <h3>{summary}</h3>
-        <ChatForm chatroomId={this.props.params.id}/>
-        <ChatList messages={this.state.messages}/>
+        <div className="container col-sm-12 col-md-12 col-lg-12">
+          <div className="col-sm-6 col-md-6 col-lg-6">
+            <iframe src={link} width="100%"></iframe>
+          </div>
+          <div className="col-sm-6 col-md-6 col-lg-6">
+            <h2>{name}</h2>
+            <h4>{summary}</h4>
+            <a href={link} target="_blank">{link}</a>
+            <ChatForm chatroomId={this.props.params.id}/>
+            <ChatList messages={this.state.messages}/>
+          </div>
         </div>
       )
     } else {

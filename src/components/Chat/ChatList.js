@@ -8,13 +8,15 @@ export default class ChatList extends Component {
 
     for (let key in messages) {
       let Message = (
-        <li key={key}>{messages[key]}</li>
+        <li className="list-group-item" key={key}>{messages[key]}</li>
       )
       Messages.push(Message);
     }
 
+    Messages.reverse();
+
     return (
-      <ul>
+      <ul className="list-group">
         {Messages}
       </ul>
     )
