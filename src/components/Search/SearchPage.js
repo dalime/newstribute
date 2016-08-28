@@ -41,6 +41,7 @@ export default class SearchPage extends Component {
         <div className="container">
           <div className="text-center form-group">
             <h1>NewsRant</h1>
+            <h5 style={styles.instructions}>Search a topic of interest.</h5>
             <form onSubmit={this._search} className="form-inline">
               <input type="text" onChange={this._onInputChange} className="form-control"/>
               <button type="submit" className="btn btn-primary">Search</button>
@@ -52,5 +53,12 @@ export default class SearchPage extends Component {
         </div>
       </div>
     )
+  }
+}
+
+const styles = {
+  instructions: {
+    fontStyle: 'italic',
+    marginTop: '40px'
   }
 }

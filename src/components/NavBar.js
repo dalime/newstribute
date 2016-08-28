@@ -16,6 +16,7 @@ export default class Navbar extends Component {
             <Link className="navbar-brand" to='/'>NewsRant</Link>
           </div>
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <p className="navbar-text" style={styles.slogan}>Be opinionated.</p>
             <ul className="nav navbar-nav navbar-right">
               <li><Link to='/'>Search</Link></li>
               <li><Link to='/rooms'>Active Rooms</Link></li>
@@ -24,5 +25,11 @@ export default class Navbar extends Component {
         </div>
       </nav>
     )
+  }
+}
+
+const styles = {
+  slogan: {
+    fontStyle: 'italic'
   }
 }
