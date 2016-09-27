@@ -1,5 +1,5 @@
 {
-  "name": "mern-todo",
+  "name": "newsRant",
   "version": "1.0.0",
   "description": "",
   "main": "server/app.js",
@@ -14,7 +14,7 @@
     "node": "6.3.1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Danny Lim and Dhilipanraja Joseph",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.13.1",
