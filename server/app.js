@@ -1,6 +1,5 @@
 // CONSTANTS
 const PORT = process.env.PORT || 8000;
-//const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/YOUR_DB_NAME';
 
 // PACKAGE REQUIRES
 const bodyParser = require('body-parser');
@@ -8,12 +7,6 @@ const cookieParser = require('cookie-parser');
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-
-// DB CONNECT
-// require('mongoose').connect(MONGO_URI, err => {
-//   if(err) throw err;
-//   console.log(`MongoDB connected to ${MONGO_URI}`);
-// });
 
 // APP DECLARATION
 const app = express();

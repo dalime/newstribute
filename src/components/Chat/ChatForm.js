@@ -14,6 +14,7 @@ export default class ChatForm extends Component {
   }
 
   _onInputChange(e) {
+    // SET VALUE OF TEXT TO CHAT BASED ON INPUT VALUE
     let messageText = e.target.value;
     this.setState({ messageText })
   }
@@ -21,7 +22,11 @@ export default class ChatForm extends Component {
   _onSubmit(e) {
     e.preventDefault();
     let { messageText } = this.state;
+    
+    // CREATES NEW MESSAGE WITH MESSAGETEXT STATE
     ChatActions.createMessage(this.props.chatroomId, messageText);
+
+    // SET STATE TO EMPTY TO CLEAR TEXTINPUT
     this.setState({
       messageText: ''
     });

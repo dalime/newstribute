@@ -3,8 +3,14 @@ import SearchActions from '../../actions/SearchActions';
 import { browserHistory } from 'react-router';
 
 import Results from './Results';
-
 import NavBar from '../NavBar';
+
+const styles = {
+  instructions: {
+    fontStyle: 'italic',
+    marginTop: '40px'
+  }
+}
 
 export default class SearchPage extends Component {
   constructor() {
@@ -56,12 +62,5 @@ export default class SearchPage extends Component {
         </div>
       </div>
     )
-  }
-}
-
-const styles = {
-  instructions: {
-    fontStyle: 'italic',
-    marginTop: '40px'
   }
 }

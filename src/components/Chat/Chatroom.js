@@ -12,9 +12,9 @@ export default class Chatroom extends Component {
   constructor() {
     super();
 
+    // POPULATE STATE WITH EXISTING VALUES FROM STORE
     this.state = {
       chatroomObj: MessageStore.getChatroom(),
-      //chatroomObj: MessageStore.getNewChatroom(),
       messages: MessageStore.get()
     }
 
@@ -22,17 +22,23 @@ export default class Chatroom extends Component {
   }
 
   componentDidMount() {
+    // GET INFORMATION FROM STORE FOR CHATROOM ID
     ChatActions.setId(this.props.params.id);
     ChatActions.getChatroom(this.props.params.id);
     ChatActions.getMessages(this.props.params.id);
+
+    // START LISTENING TO MESSAGE STORE
     MessageStore.startListening(this._onChange);
   }
 
   componentWillUnmount() {
+    // STOP LISTENING TO MESSAGE STORE
     MessageStore.stopListening(this._onChange);
   }
 
   _onChange() {
+    // WHEN STORE CHANGES, SET STATE TO WHAT IS IN STORE
+    // *Every time new message is sent*
     this.setState({
       chatroomObj: MessageStore.getChatroom(),
       messages: MessageStore.get()
@@ -66,15 +72,4 @@ export default class Chatroom extends Component {
       )
     }
   }
-
 }
-
-// const styles = {
-//   title: {
-//     color: 'red'
-//   },
-//   caption: {
-//     color: 'purple',
-//     fontSize: 200
-//   }
-// }

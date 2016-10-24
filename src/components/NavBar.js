@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
+const styles = {
+  slogan: {
+    fontStyle: 'italic'
+  }
+}
+
 export default class Navbar extends Component {
   render() {
     return (
@@ -25,11 +31,5 @@ export default class Navbar extends Component {
         </div>
       </nav>
     )
-  }
-}
-
-const styles = {
-  slogan: {
-    fontStyle: 'italic'
   }
 }

@@ -3,6 +3,7 @@ const router = express.Router();
 const axios = require('axios');
 const cheerio = require('cheerio');
 
+// CHEERIO ROUTE TO WEBSCRAPE BBC's NEWS ARTICLES based on query string
 router.route('/:query')
   .get((req, res) => {
     axios.get(`http://www.bbc.co.uk/search?q=${req.params.query}`)

@@ -1,5 +1,6 @@
 import AppDispatcher from '../AppDispatcher';
 
+// TO RECEIVE RESULTS OF CHATROOMS
 const ServerActions = {
   receiveResults(results) {
     AppDispatcher.dispatch({

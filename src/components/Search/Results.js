@@ -47,9 +47,13 @@ export default class Results extends Component {
 
   _checkIfExists(title, link, summary) {
     let existingRooms = this.state.chatrooms;
+
+    // FILTER EXISTING CHATROOMS TO SEE IF ONE WITH THE SAME TITLE EXISTS
     let existingObj = existingRooms.filter(object => {
       return object.name === title;
     })
+
+    // IF EXISTS, send user to existing chatroom, ELSE, create a new chatroom
     if (existingObj[0]) {
       browserHistory.push(`/chat/${existingObj[0].key}`)
     } else {
@@ -62,6 +66,7 @@ export default class Results extends Component {
   }
 
   _createChatRoom(title, link, summary) {
+    // FUNCTION TO CREATE NEW CHATROOM
     ChatActions.createChatroom(title, link, summary)
     let newObj = {
       title, link, summary
@@ -75,6 +80,7 @@ export default class Results extends Component {
   render() {
     if (this.state.results) {
       const Results = this.state.results.map((result, index) => {
+        // MAP THE FOLLOWING DIV ELEMENT PER CHATROOM
         return (
           <div key={index}>
             <hr/>

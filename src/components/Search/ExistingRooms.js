@@ -8,13 +8,16 @@ export default class ExistingRooms extends Component {
   constructor() {
     super();
 
+    // GET ALL AVAILALBE CHATROOMS FROM FIREBASE
     this.state = {
       rooms: MessageStore.getChatrooms()
     }
+
     this._onChange = this._onChange.bind(this);
   }
 
   componentDidMount() {
+    // GET ALL AVAILABLE CHATROOMS FROM FIREBASE
     ChatActions.getChatrooms();
     MessageStore.startListening(this._onChange);
   }
@@ -34,13 +37,16 @@ export default class ExistingRooms extends Component {
 
     if (rooms) {
       const Rooms = rooms.map((room, index) => {
+        // SET PATH DYNAMICALLY AS FIREBASE DOCUMENT ID
         let path = '/chat/' + room.key
 
+        // A LINK FOR EACH CHATROOM so users can navigate in
         return (
           <Link key={index} to={path} className="list-group-item">{room.name}</Link>
         )
       })
 
+      // REVERSE TO SHOW NEW CHATROOMS ON TOP
       Rooms.reverse();
 
       return (
@@ -57,6 +63,5 @@ export default class ExistingRooms extends Component {
     } else {
       <h1>Loading...</h1>
     }
-
   }
 }
