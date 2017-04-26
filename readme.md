@@ -31,6 +31,8 @@ View in browser.
 http://localhost:8000
 ```
 
+## Deployed
+[NewsRant on Heroku](http://newsrant.herokuapp.com/)
 
 ## Built With
 
