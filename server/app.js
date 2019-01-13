@@ -1,3 +1,6 @@
+// NEW RELIC
+require ('newrelic');
+
 // CONSTANTS
 const PORT = process.env.PORT || 8000;
 
