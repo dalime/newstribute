@@ -11,7 +11,8 @@
     "prod": "NODE_ENV='production' npm start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "publish-demo": "npm run build && npm run deploy"
   },
   "engines": {
     "node": "6.3.1"
@@ -44,7 +45,6 @@
     "flux": "^2.1.1",
     "font-awesome": "^4.6.3",
     "font-awesome-loader": "^1.0.0",
-    "gh-pages": "^2.1.1",
     "imports-loader": "^0.6.5",
     "jquery": "^3.1.0",
     "mongoose": "^4.5.9",
@@ -66,5 +66,8 @@
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.12.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }
