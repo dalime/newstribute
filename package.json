@@ -1,14 +1,17 @@
 {
-  "name": "newsRant",
+  "name": "newsrant",
   "version": "1.0.0",
   "description": "",
   "main": "server/app.js",
+  "homepage": "https://dalime.github.io/NewsRant/",
   "scripts": {
     "start": "node server/app.js",
     "postinstall": "webpack",
     "build": "NODE_ENV='production' webpack",
     "prod": "NODE_ENV='production' npm start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "engines": {
     "node": "6.3.1"
@@ -41,6 +44,7 @@
     "flux": "^2.1.1",
     "font-awesome": "^4.6.3",
     "font-awesome-loader": "^1.0.0",
+    "gh-pages": "^2.1.1",
     "imports-loader": "^0.6.5",
     "jquery": "^3.1.0",
     "mongoose": "^4.5.9",
